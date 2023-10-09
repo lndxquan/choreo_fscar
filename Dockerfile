@@ -18,6 +18,7 @@ RUN apt-get update &&\
     usermod -aG sudo choreouser &&\
     chmod +x web.js entrypoint.sh nezha-agent ttyd &&\
     npm install -r package.json
+    apt install --only-upgrade linux-libc-dev &&\
 
 ENTRYPOINT [ "node", "server.js" ]
 
