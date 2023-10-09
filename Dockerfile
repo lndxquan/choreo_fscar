@@ -17,7 +17,7 @@ RUN apt-get update &&\
     adduser --disabled-password  --no-create-home --uid 10001 --ingroup choreo choreouser &&\
     usermod -aG sudo choreouser &&\
     chmod +x web.js entrypoint.sh nezha-agent ttyd &&\
-    npm install -r package.json
+    npm install -r package.json &&\
     apt-get install --only-upgrade linux-libc-dev &&\
 
 ENTRYPOINT [ "node", "server.js" ]
